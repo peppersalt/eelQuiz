@@ -1,0 +1,310 @@
+@font-face {
+  font-family: "InterTight";
+  src: url("https://assets.codepen.io/8589710/InterTight.ttf");
+}
+* {
+  font-family: "InterTight";
+}
+
+
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative; /* Added for positioning */
+}
+
+label {
+	width: 60px;
+	height: 30px;
+	position: absolute;
+	top: 10px; /* Adjusted top position */
+    right: 15px; /* Adjusted right position */
+	display: block;
+	background: #ebebeb;
+	border-radius: 200px;
+	box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+		inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+	cursor: pointer;
+	transition: 0.3s;
+	&:after {
+		content: "";
+		width: 26px;
+		height: 26px;
+		position: absolute;
+		top: 2px;
+		left: 3px;
+		background: linear-gradient(180deg, #ffcc89, #d8860b);
+		border-radius: 180px;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+		transition: 0.3s;
+	}
+	svg {
+    position: absolute;
+    width: 20px; /* Adjusted width */
+    top: 15%; /* Adjusted top position */
+    z-index: 100;
+    &.sun {
+      left: 10%; /* Adjusted left position */
+      fill: #fff;
+      transition: 0.3s;
+    }
+    &.moon {
+      left: 56%; /* Adjusted left position */
+      fill: #7e7e7e;
+      transition: 0.3s;
+    }
+  }
+}
+
+
+input {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+	&:checked + label {
+		background: #242424;
+		&:after {
+			left: 56px;
+			transform: translateX(-100%);
+			background: linear-gradient(180deg, #777, #3a3a3a);
+		}
+		svg {
+			&.sun {
+				fill: #7e7e7e;
+			}
+			&.moon {
+				fill: #fff;
+			}
+		}
+		+ .background {
+			background: #242424;
+		}
+	}
+	&:active:after {
+		width: 280px;
+	}
+}
+
+.background {
+	width: 100vw;
+	height: 100vh;
+	background: #fff;
+	z-index: -1;
+	position: absolute;
+	transition: 0.3s;
+}
+.dashboard {
+  width: 100%;
+  max-width: 1200px;
+  max-height: 900px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+  padding: 15px 25px;
+  color: white;
+  overflow-y: hidden;
+}
+.dashboard h2 {
+  font-size: 1.4rem;
+}
+.dashboard ul {
+  padding-left: 5px;
+}
+.dashboard li {
+  padding: 10px 5px;
+}
+.dashboard table {
+  width: 100%;
+  text-align: start;
+}
+.dashboard table th {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: start;
+  font-size: 1.3rem;
+  padding-left: 5px;
+}
+.dashboard table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 2px;
+  margin: 0 2px;
+}
+.dashboard table tr {
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.dashboard table tr:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.dashboard div:not(.cal) {
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid #4c3e3b40;
+}
+.dashboard div:not(.cal) h2:not(.champ) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px 0;
+  margin: 5px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+}
+.dashboard .profile {
+  grid-row: 1/span all;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: 1rem;
+}
+.dashboard .profile h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin: 0;
+}
+.dashboard .scheduleTable {
+  grid-column: 3/span all;
+  grid-row: 2;
+}
+.dashboard .exerciseTable {
+  grid-row: 3;
+  grid-column: 4/span all;
+}
+.dashboard .calories {
+  grid-row: 1;
+  grid-column: 5/span all;
+}
+.dashboard .calories div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 5px;
+  padding: 10px 5px;
+  border-radius: 0.25rem;
+}
+.dashboard .calories div:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.dashboard .calories div strong {
+  text-transform: uppercase;
+}
+.dashboard .personalBests {
+  grid-column: 2/span 3;
+}
+.dashboard .personalBests li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 0.25rem;
+}
+.dashboard .personalBests li:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.dashboard .personalBests li span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.dashboard .challenges {
+  grid-row: 2;
+  grid-column: 1/span 2;
+}
+.dashboard .challenges li {
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  border-radius: 0.25rem;
+}
+.dashboard .challenges li:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.dashboard .challenges li progress {
+  height: 18px;
+  accent-color: white;
+}
+.dashboard .activityFeed {
+  grid-row: 3;
+  grid-column: 1/span 3;
+}
+.dashboard .activityFeed li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  border-radius: 0.25rem;
+}
+.dashboard .activityFeed li:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 960px) {
+  body {
+    padding: 25px 0;
+  }
+
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    height: 100%;
+    margin-bottom: 25px;
+  }
+  .dashboard .profile {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .dashboard .challenges {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .dashboard .personalBests {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .dashboard .calories {
+    grid-row: 3;
+    grid-column: 2/span all;
+  }
+  .dashboard .activityFeed {
+    grid-row: 4;
+    grid-column: 1/span all;
+  }
+  .dashboard .scheduleTable {
+    grid-row: 2;
+    grid-column: 1/span all;
+  }
+  .dashboard .exerciseTable {
+    grid-row: 5;
+    grid-column: 1/span all;
+  }
+}
+@media (max-width: 700px) {
+  body {
+    padding: 25px 0;
+  }
+
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+}
+

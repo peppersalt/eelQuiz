@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="logo.png">
+    <title>Дэшборд</title>
+    <link href="dashboard.css" rel="stylesheet">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="dashboard.js"></script>
+
+</head>
+<body>
+<div class="background"></div>
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+        <div class="dashboard">
+        <div class="profile">
+            <h2 class="champ" id="dashboardData"></h2>
+            <p></p>
+        </div>
+            <!--
+        <div class="scheduleTable">
+            <h2><span class="material-symbols-outlined">calendar_month</span> Weekly Schedule</h2>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Scheduled Exercise</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>Running</td>
+                    <td>6:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>Swimming</td>
+                    <td>7:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>Cycling</td>
+                    <td>6:30 AM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Yoga</td>
+                    <td>6:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Weight Training</td>
+                    <td>8:00 AM</td>
+                </tr>
+            </table>
+        </div>-->
+
+
+        <div class="calories">
+    <h2><span class="material-symbols-outlined"></span> Ваша интеллект-карта</h2>
+    <canvas id="myChart" width="400" height="200"></canvas>
+</div>
+        <div class="personalBests">
+            <h2><span class="material-symbols-outlined"></span> Доступные тесты</h2>
+            <ul>
+                <li onclick="openTest('основы математики')">Тест 1: <span>основы математики</span></li>
+                <li onclick="openTest('высшая математика')">Тест 2: <span>высшая математика</span></li>
+            </ul>
+        </div>
+
+        <script type="text/javascript">
+            function openTest(testName) {
+                window.location.href = 'test.html?test=' + encodeURIComponent(testName);
+            }
+        </script>
+
+        <!--
+        <div class="challenges">
+            <h2><span class="material-symbols-outlined">trophy</span> Challenges</h2>
+            <ul>
+                <li><span>30-Day Running Streak</span><progress value="0.4"></progress></li>
+                <li><span>1,000 Pushups in a Month</span><progress value="0.6"></progress></li>
+                <li><span>Swim 20km in a Month</span><progress value="0.2"></progress></li>
+
+            </ul>
+        </div> -->
+
+    </div>
+    <script>
+        var phrasesWithEmojis = [
+          "Постоянство - ключ к успеху! 💪",
+          "Никогда не сдавайся! 😊👊",
+          "Сегодня лучший день, чтобы изучить что-то новое! 🌟📚",
+          "Ты можешь достичь всего, во что веришь! 🌈💯",
+          "Учение - это сила! 📖💪",
+          "Будь настойчивым и добьешься своих целей! 🚀💫",
+          "Твои возможности безграничны! 💥😎",
+          "Каждый шаг приближает тебя к успеху! 🚶‍♂️🔝",
+          "Верь в себя и чудеса начнут происходить! ✨🙌",
+          "Ты сможешь — если ты сможешь подумать, что сможешь! 💭💪",
+          "Трудности — это лишь путь к твоему развитию! 👨‍🔬💡",
+          "Счастье — это постоянный рост! 🌱😃",
+          "Без мечты нет достижений! 🌙🌠",
+        ];
+
+        // Получи ссылку на элемент <p> с мотивационной фразой
+        var motivationalPhrase = document.querySelector(".profile p");
+
+        // Сгенерируй случайный индекс для выбора фразы из массива
+        var randomIndex = Math.floor(Math.random() * phrasesWithEmojis.length);
+
+        // Установи выбранную фразу в элемент <p>
+        motivationalPhrase.textContent = phrasesWithEmojis[randomIndex];
+
+    </script>
+
+</body>
+</html>

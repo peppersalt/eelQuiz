@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="logo.png">
+    <title>Тест</title>
+        <link href="test.css" rel="stylesheet">
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript" src="quiz.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+</head>
+<body id="fx-respond">
+<div class="background">
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+  <div class="grid">
+    <div id="quiz" class="centered grid__col--9">
+        <!--<h1>Выберите правильный вариант ответа</h1>-->
+
+        <div class="card">
+            <span id="countdown" style="font-weight: bold;"></span>
+        </div>
+
+        <h2 id="question" class="headline-secondary--grouped"></h2>
+        <h3 id="score"></h3>
+
+        <p id="choice0"></p>
+        <button id="guess0" class="btn--default">Выбрать ответ</button>
+        <p id="choice1"></p>
+        <button id="guess1" class="btn--default">Выбрать ответ</button>
+        <p id="choice2"></p>
+        <button id="guess2" class="btn--default">Выбрать ответ</button>
+        <p id="choice3"></p>
+        <button id="guess3" class="btn--default">Выбрать ответ</button>
+
+        <footer>
+            <p id="progress">Вопрос x из y</p>
+        </footer>
+    </div>
+</div>
+</div>
+</body>
+</html>
