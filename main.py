@@ -1,6 +1,5 @@
 import os
 import eel
-import openpyxl
 import pandas as pd
 from fractions import Fraction
 

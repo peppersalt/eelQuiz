@@ -20,13 +20,13 @@ eel.authenticate(login, password)(function(result) {
                 // Set color based on score ranges
                 function getColor(score) {
                     if (score < 60) {
-                        return 'rgba(120, 100, 120, 0.4)';
+                        return 'rgba(120, 100, 120, 0.5)';
                     } else if (score < 71) {
-                        return 'rgba(0, 106, 200, 0.4)';
+                        return 'rgba(50, 106, 100, 0.5)';
                     } else if (score < 78) {
-                        return 'rgba(100, 210, 80, 0.4)';
+                        return 'rgba(100, 210, 80, 0.5)';
                     } else {
-                        return 'rgba(225, 55, 92, 0.4)';
+                        return 'rgba(225, 55, 92, 0.5)';
                     }
                 }
 

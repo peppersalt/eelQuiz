@@ -1,5 +1,4 @@
 import eel
-import bottle_websocket
 import main
 
 
