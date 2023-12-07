@@ -1,5 +1,5 @@
 ﻿# MathQuiz-eel
-well to work this properly you need to install eel and pandas packages.
+well to work this properly you need to install eel,openpyxk and pandas packages.
 1. pip install eel
 2. pip install pandas
 3. pip install openpyxl
